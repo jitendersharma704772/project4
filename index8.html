@@ -1,0 +1,170 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>java script 4</title>
+</head>
+<body>
+
+    <p id="text1"></p>
+    <p id="text2"></p>
+    <p id="text3"></p>
+    <p id="text4"></p>
+    <p id="text5"></p>
+    <p id="text6"></p>
+    <p id="text7"></p>
+    <p id="text8"></p>
+    <p id="text9"></p>
+    <p id="text10"></p>
+    <p id="text11"></p>
+    <p id="text12"></p>
+    <p id="text13"></p>
+    <p id="text14"></p>
+    <p id="text15"></p>
+    <p id="text16"></p>
+    <p id="text17"></p>
+    <p id="text18"></p>
+    <p id="text19"></p>
+    <p id="text20"></p>
+    <p id="text21"></p>
+    <p id="text22"></p>
+    <p id="text23"></p>
+    <p id="text24"></p>
+    <p id="text25"></p>
+    <p id="text26"></p>
+    <p id="text27"></p>
+    <p id="text28"></p>
+    <p id="text29"></p>
+
+
+
+    <script>
+
+        // for loop
+        let forLoopText = "";
+        for (let num = 1; num <= 3; num++) {
+            forLoopText += `${num} <br/> `
+        }
+
+        carName1 = ["BMW", "MAHINDRA", "TATA", "TOYOTA"]
+        // FOR IN LOOP
+        let forInLoopText = "";
+        for (let x in carName1) {
+            forInLoopText += `${carName1[x]} <br/> `
+        }
+
+        // FOR OF LOOP
+        let forOfLoopText = "";
+        for (let x of carName1) {
+            forOfLoopText += `${x} <br/>`
+        }
+
+        // FOR EACH LOOP
+        let forEachLoopText = "";
+        carName1.forEach((ele, index, total) => {
+            forEachLoopText += `element  ${ele}, index ${index}, total array ${total} <br/> `
+            
+        })
+
+        carName2 = ["BMW", "MAHINDRA", "TATA", "TOYOTA"]
+        carName3 = ["HERO", "TVS", "BAJAJ"]
+        carName3a = [...carName2, ...carName3];
+
+        biodata1 = { name: "jitender", email: "jeetu@gmail.com", phone: 1111 }
+
+        // DESTRUCTIOR OF ARRAY AND OBJECT
+
+        //let [text1, text2, text3, text4] = carName2;
+        //let [, , , text1] = carName2;
+        let [text1, ...index] = carName2;
+
+        let { name: myname, email, phone } = biodata1
+
+
+        //defaul parameter
+        let fun_1 = (a, b=4) => {
+            return a+b
+        }
+        //fun_1(5);
+
+        //rest parameter
+        let fun_2 = (a, b, ...index) => {
+            let total = 0;
+            for (let x of index) {
+                total += x;
+            }
+
+            document.getElementById("text11").innerHTML = `${a + b}`;
+            document.getElementById("text12").innerHTML = `${index}`;
+            document.getElementById("text13").innerHTML = `${total}`;
+        }
+        fun_2(2, 2, 3, 3);
+
+
+        // spreat operater
+        numArray = [2, 10, 7, 50, 80];
+
+        let resutl = numArray.find((item) => {
+            return item > 10;
+        })
+
+        let result2 = numArray.map((item) => {
+            return item * 2;
+        })
+
+        let fun_3 = (a, b, ...index) => {
+            let total = 0;
+            for (let x of index) {
+                total += x;
+            }
+
+            document.getElementById("text17").innerHTML = `${a}`;
+            document.getElementById("text18").innerHTML = `${b}`;
+            document.getElementById("text19").innerHTML = `${index}`;
+            document.getElementById("text20").innerHTML = `${total}`;
+        }
+        fun_3(...numArray);
+
+
+        document.getElementById("text1").innerHTML = ` ${forLoopText} `;
+        document.getElementById("text2").innerHTML = `${forInLoopText}`;
+        document.getElementById("text3").innerHTML = `${forOfLoopText}`;
+        document.getElementById("text4").innerHTML = `${forEachLoopText}`;
+        document.getElementById("text5").innerHTML = `ARRAY:- ${carName2} `;
+        document.getElementById("text6").innerHTML = `OBJECT:-  ${biodata1.name} `;
+        document.getElementById("text7").innerHTML = `${index}`;
+        document.getElementById("text8").innerHTML = `${carName3a}`;
+        document.getElementById("text9").innerHTML = `${myname}`;
+        document.getElementById("text10").innerHTML = `${fun_1(5)}`;        
+
+        //document.getElementById("text12").innerHTML = ``;
+        //document.getElementById("text13").innerHTML = ``;
+        //document.getElementById("text14").innerHTML = ``;
+        document.getElementById("text15").innerHTML = `${resutl}`;
+        document.getElementById("text16").innerHTML = `${result2}`;
+        
+        
+        
+        document.getElementById("text21").innerHTML = ``;
+        document.getElementById("text22").innerHTML = ``;
+        document.getElementById("text23").innerHTML = ``;
+        document.getElementById("text24").innerHTML = ``;
+        document.getElementById("text25").innerHTML = ``;
+        document.getElementById("text26").innerHTML = ``;
+        document.getElementById("text27").innerHTML = ``;
+        document.getElementById("text28").innerHTML = ``;
+        document.getElementById("text29").innerHTML = ``;
+        
+     
+
+
+
+    </script>
+
+
+</body>
+</html>
+
+
+
